@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+
+
 function App() {
   return (
     <div className="App">
@@ -17,10 +20,13 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+
         </a>
+
+        <AmplifySignOut />
       </header>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

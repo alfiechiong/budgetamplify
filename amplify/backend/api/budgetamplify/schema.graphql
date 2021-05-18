@@ -6,3 +6,13 @@ type Todo @model @auth(rules:[
   name: String!
   description: String
 }
+
+type User @model @auth(rules:[
+  {allow: groups, groups:["Admin"]},
+  {allow: owner, ownerField:"username", operations:[read]},
+]){
+  id: ID!
+  name: String!
+  description: String
+}
+
