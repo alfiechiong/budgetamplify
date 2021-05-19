@@ -1,32 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {useEffect} from 'react'
+import Amplify,{API, Auth, graphqlOperation} from 'aws-amplify'
+import {withAuthenticator } from '@aws-amplify/ui-react'
+import awsExports from "./aws-exports";
+import Routes from './components/Routes'
+import {ThemeProvider} from '@material-ui/core/styles'
+import theme from './theme'
+import {BrowserRouter} from 'react-router-dom'
+import {listUsers} from './graphql/queries'
+import { AnyARecord } from 'dns';
 
-import {withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+Amplify.configure(awsExports);
 
+const App = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    const isUserExist= async ()=>{
+        const user:any = await API.graphql(graphqlOperation(listUsers))
+        return user.data.listUsers.items
+    }
 
-        </a>
+    useEffect(()=>{
+        console.log(Auth)
+        console.log("USER:: ", isUserExist())
+    })
 
-        <AmplifySignOut />
-      </header>
-    </div>
-  );
+    return <ThemeProvider theme={theme}>
+    <BrowserRouter>
+    <Routes />
+    </BrowserRouter></ThemeProvider>
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App)

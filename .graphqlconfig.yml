@@ -1,6 +1,6 @@
 projects:
   budgetamplify:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/budgetamplify/build/schema.graphql
     includes:
       - src/graphql/**/*.js
     excludes:

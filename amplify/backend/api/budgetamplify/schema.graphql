@@ -16,3 +16,43 @@ type User @model @auth(rules:[
   description: String
 }
 
+
+
+type Party @model {
+id:ID!
+party_role_id:PartyRole @connection
+party_type_id:PartyType @connection
+entity_id:ID!
+}
+
+type PartyType @model {
+id:ID!
+name:String!
+description:String!
+}
+
+type PartyRole @model {
+id:ID!
+name:String!
+description:String!
+}
+
+type Expenses @model{
+id:ID!
+name:String!
+category: String!
+partyId: Party @connection
+amount: String!
+description:String
+date: AWSDate!
+}
+
+type Income @model{
+id:ID!
+name:String!
+partyId: Party @connection
+amount: String!
+category: String!
+description:String
+date: AWSDate!
+}

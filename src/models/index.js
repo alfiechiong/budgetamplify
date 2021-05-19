@@ -4,9 +4,14 @@ import { schema } from './schema';
 
 
 
-const { Todo, User } = initSchema(schema);
+const { Todo, User, Party, PartyRole, PartyType, Expenses, Income } = initSchema(schema);
 
 export {
   Todo,
-  User
+  User,
+  Party,
+  PartyRole,
+  PartyType,
+  Expenses,
+  Income
 };
