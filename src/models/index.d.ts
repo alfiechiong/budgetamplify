@@ -15,9 +15,8 @@ export declare class Todo {
 
 export declare class User {
   readonly id: string;
-  readonly name: string;
+  readonly username: string;
   readonly description?: string;
-  readonly username?: String;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
