@@ -211,13 +211,7 @@ export const onCreateExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -232,13 +226,7 @@ export const onUpdateExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -253,13 +241,7 @@ export const onDeleteExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -273,13 +255,7 @@ export const onCreateIncome = /* GraphQL */ `
     onCreateIncome {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description
@@ -294,13 +270,7 @@ export const onUpdateIncome = /* GraphQL */ `
     onUpdateIncome {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description
@@ -315,13 +285,7 @@ export const onDeleteIncome = /* GraphQL */ `
     onDeleteIncome {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description

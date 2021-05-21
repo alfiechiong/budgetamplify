@@ -280,18 +280,12 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "partyId": {
-                    "name": "partyId",
+                "userId": {
+                    "name": "userId",
                     "isArray": false,
-                    "type": {
-                        "model": "Party"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "expensesPartyIdId"
-                    }
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
                 },
                 "amount": {
                     "name": "amount",
@@ -341,18 +335,12 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "partyId": {
-                    "name": "partyId",
+                "userId": {
+                    "name": "userId",
                     "isArray": false,
-                    "type": {
-                        "model": "Party"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "incomePartyIdId"
-                    }
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
                 },
                 "amount": {
                     "name": "amount",
@@ -395,5 +383,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "79bd1f651e34a38ff294d4978dd03f2f"
+    "version": "9f2a3a50ef0fcdb2a2189e4e4a6b177b"
 };

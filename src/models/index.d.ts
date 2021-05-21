@@ -50,7 +50,7 @@ export declare class Expenses {
   readonly id: string;
   readonly name: string;
   readonly category: string;
-  readonly partyId?: Party;
+  readonly userId: string;
   readonly amount: string;
   readonly description?: string;
   readonly date: string;
@@ -61,7 +61,7 @@ export declare class Expenses {
 export declare class Income {
   readonly id: string;
   readonly name: string;
-  readonly partyId?: Party;
+  readonly userId: string;
   readonly amount: string;
   readonly category: string;
   readonly description?: string;

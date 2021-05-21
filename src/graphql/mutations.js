@@ -259,13 +259,7 @@ export const createExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -283,13 +277,7 @@ export const updateExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -307,13 +295,7 @@ export const deleteExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -330,13 +312,7 @@ export const createIncome = /* GraphQL */ `
     createIncome(input: $input, condition: $condition) {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description
@@ -354,13 +330,7 @@ export const updateIncome = /* GraphQL */ `
     updateIncome(input: $input, condition: $condition) {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description
@@ -378,13 +348,7 @@ export const deleteIncome = /* GraphQL */ `
     deleteIncome(input: $input, condition: $condition) {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description

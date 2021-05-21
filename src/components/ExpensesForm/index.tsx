@@ -7,34 +7,45 @@ import useStyles from './styles'
 import {createExpenses} from '../../graphql/mutations'
 import addExpenses from '../../pages/Expenses/Add';
 import Amplify, { API, graphqlOperation, Auth,  } from 'aws-amplify'
+import {useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 
 const ExpenseForm = () => {
   const {control, handleSubmit } = useForm();
-  const onSubmit = async (data:any) => {
-   
-    // setExpenses(data)
-    // const updatedData = {...data, userId:Auth. }
 
-    
-    try{
-    await API.graphql(graphqlOperation(createExpenses,{input:data}))
-    console.log("the date",data)
-    }catch(e){
-      console.log(e)
-    }
-  };
   const classes = useStyles()
   const [expenses, setExpenses] = useState<any>()
   const [dateNow, setDateNow] = useState<string>();
+  const userId = useSelector((data:any)=>data.user.sub)
+  const history = useHistory()
 
+  interface Iexpense {
+    name:String
+    category: String
+    userId: String
+    amount: String
+    description:String
+    date: String
+  }
+
+  const onSubmit = async (data:Iexpense) => {
+    const newData = {...data, userId:userId}
+    addExpenses(newData)
+  };
 
   useEffect(()=>{
     const now = new Date()
     setDateNow(now.toString())
+    
   })
 
-  const addExpenses = async () =>{
-    await API.graphql(graphqlOperation(createExpenses,{input:expenses}))
+  const addExpenses = async (data:Iexpense) =>{
+    try{
+      await API.graphql(graphqlOperation(createExpenses,{input:data}))
+      history.push('/expenses')
+      }catch(e){
+        console.log(e)
+      }
   }
 
   return (

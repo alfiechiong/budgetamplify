@@ -6,20 +6,38 @@ import TextField from '@material-ui/core/TextField';
 import useStyles from './styles'
 import {createIncome} from '../../graphql/mutations'
 import {API, graphqlOperation} from 'aws-amplify'
+import {useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
+
+interface Iincome {
+  name:String
+  category: String
+  userId: String
+  amount: String
+  description:String
+  date: String
+}
 
 const IncomeForm = () => {
   const {control, handleSubmit } = useForm();
-  const onSubmit = async (data:any) => {
-    try{
-      await API.graphql(graphqlOperation(createIncome,{input:data}))
-      console.log("the date",data)
-      }catch(e){
-        console.log(e)
-      }
+  const history = useHistory()
+  const userId = useSelector((data:any)=>data.user.sub)
+
+  const onSubmit = async (data:Iincome) => {
+    const newData = {...data, userId:userId}
+    addIncome(newData)
   };
   const classes = useStyles()
   const [dateNow, setDateNow] = useState<string>();
 
+  const addIncome = async (data:Iincome) =>{
+    try{
+      await API.graphql(graphqlOperation(createIncome,{input:data}))
+      history.push('/income')
+      }catch(e){
+        console.log(e)
+      }
+  }
 
   useEffect(()=>{
     const now = new Date()

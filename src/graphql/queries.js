@@ -178,13 +178,7 @@ export const getExpenses = /* GraphQL */ `
       id
       name
       category
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       description
       date
@@ -204,13 +198,7 @@ export const listExpensess = /* GraphQL */ `
         id
         name
         category
-        userId {
-          id
-          username
-          description
-          createdAt
-          updatedAt
-        }
+        userId
         amount
         description
         date
@@ -226,13 +214,7 @@ export const getIncome = /* GraphQL */ `
     getIncome(id: $id) {
       id
       name
-      userId {
-        id
-        username
-        description
-        createdAt
-        updatedAt
-      }
+      userId
       amount
       category
       description
@@ -252,13 +234,7 @@ export const listIncomes = /* GraphQL */ `
       items {
         id
         name
-        userId {
-          id
-          username
-          description
-          createdAt
-          updatedAt
-        }
+        userId
         amount
         category
         description
