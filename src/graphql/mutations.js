@@ -259,23 +259,10 @@ export const createExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -296,23 +283,10 @@ export const updateExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -333,23 +307,10 @@ export const deleteExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -369,23 +330,10 @@ export const createIncome = /* GraphQL */ `
     createIncome(input: $input, condition: $condition) {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -406,23 +354,10 @@ export const updateIncome = /* GraphQL */ `
     updateIncome(input: $input, condition: $condition) {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -443,23 +378,10 @@ export const deleteIncome = /* GraphQL */ `
     deleteIncome(input: $input, condition: $condition) {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }

@@ -211,23 +211,10 @@ export const onCreateExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -245,23 +232,10 @@ export const onUpdateExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -279,23 +253,10 @@ export const onDeleteExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -312,23 +273,10 @@ export const onCreateIncome = /* GraphQL */ `
     onCreateIncome {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -346,23 +294,10 @@ export const onUpdateIncome = /* GraphQL */ `
     onUpdateIncome {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -380,23 +315,10 @@ export const onDeleteIncome = /* GraphQL */ `
     onDeleteIncome {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }

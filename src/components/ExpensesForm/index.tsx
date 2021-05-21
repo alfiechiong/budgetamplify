@@ -6,13 +6,16 @@ import TextField from '@material-ui/core/TextField';
 import useStyles from './styles'
 import {createExpenses} from '../../graphql/mutations'
 import addExpenses from '../../pages/Expenses/Add';
-import Amplify, { API, graphqlOperation, Auth } from 'aws-amplify'
+import Amplify, { API, graphqlOperation, Auth,  } from 'aws-amplify'
 
 const ExpenseForm = () => {
   const {control, handleSubmit } = useForm();
   const onSubmit = async (data:any) => {
    
     // setExpenses(data)
+    // const updatedData = {...data, userId:Auth. }
+
+    
     try{
     await API.graphql(graphqlOperation(createExpenses,{input:data}))
     console.log("the date",data)

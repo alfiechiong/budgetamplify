@@ -41,7 +41,7 @@ type Expenses @model{
 id:ID!
 name:String!
 category: String!
-partyId: Party @connection
+userId: User @connection
 amount: String!
 description:String
 date: AWSDate!
@@ -50,7 +50,7 @@ date: AWSDate!
 type Income @model{
 id:ID!
 name:String!
-partyId: Party @connection
+userId: User @connection
 amount: String!
 category: String!
 description:String

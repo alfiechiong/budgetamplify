@@ -178,23 +178,10 @@ export const getExpenses = /* GraphQL */ `
       id
       name
       category
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -217,9 +204,10 @@ export const listExpensess = /* GraphQL */ `
         id
         name
         category
-        partyId {
+        userId {
           id
-          entity_id
+          username
+          description
           createdAt
           updatedAt
         }
@@ -238,23 +226,10 @@ export const getIncome = /* GraphQL */ `
     getIncome(id: $id) {
       id
       name
-      partyId {
+      userId {
         id
-        party_role_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        party_type_id {
-          id
-          name
-          description
-          createdAt
-          updatedAt
-        }
-        entity_id
+        username
+        description
         createdAt
         updatedAt
       }
@@ -277,9 +252,10 @@ export const listIncomes = /* GraphQL */ `
       items {
         id
         name
-        partyId {
+        userId {
           id
-          entity_id
+          username
+          description
           createdAt
           updatedAt
         }
